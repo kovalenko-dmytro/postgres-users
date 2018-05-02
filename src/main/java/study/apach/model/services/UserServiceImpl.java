@@ -8,6 +8,7 @@ import study.apach.model.repositories.RoleRepository;
 import study.apach.model.repositories.RoleRepositoryImpl;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 public class UserServiceImpl implements UserService {
@@ -56,6 +57,11 @@ public class UserServiceImpl implements UserService {
     public Collection<User> searchUsersByRole(String roleDescription) {
         Role role = roleRepository.findByDescription(roleDescription);
         return userRepository.findByRole(role.getId());
+    }
+
+    @Override
+    public void insertUsers(List<User> users) {
+        userRepository.saveAll(users);
     }
 
     private User populateBookData(long id, Map<String, String> params) {

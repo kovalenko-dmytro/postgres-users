@@ -5,6 +5,7 @@ public enum CommandType {
     UPDATE("update"),
     DELETE("delete"),
     SEARCH_BY_NAME("search"),
+    UPLOAD("upload"),
     LIST("list"),
     INDEX("index"),
     EXIT("exit");

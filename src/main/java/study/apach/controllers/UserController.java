@@ -56,4 +56,7 @@ public class UserController {
     }
 
 
+    public void insertUsers(List<User> users) {
+        userService.insertUsers(users);
+    }
 }

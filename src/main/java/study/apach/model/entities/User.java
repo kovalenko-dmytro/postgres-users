@@ -13,6 +13,12 @@ public class User {
     public User() {
     }
 
+    public User(String name, int age, long roleId) {
+        this.name = name;
+        this.age = age;
+        this.roleId = roleId;
+    }
+
     public User(String name, int age, long roleId, String roleDescription) {
         this.name = name;
         this.age = age;

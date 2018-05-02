@@ -3,6 +3,7 @@ package study.apach.model.services;
 import study.apach.model.entities.User;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 public interface UserService {
@@ -13,5 +14,5 @@ public interface UserService {
     void updateUser(long id, Map<String, String> params);
     void deleteUser(long id);
     Collection<User> searchUsersByRole(String roleDescription);
-
+    void insertUsers(List<User> users);
 }

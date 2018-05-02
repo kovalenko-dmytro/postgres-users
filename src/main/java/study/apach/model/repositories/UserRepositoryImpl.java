@@ -148,4 +148,25 @@ public class UserRepositoryImpl implements UserRepository {
 
         return users;
     }
+
+    @Override
+    public void saveAll(List<User> users) {
+
+        try (Connection connection = DBManager.createConnection();
+             PreparedStatement insertStatement = connection.prepareStatement(INSERT_USER)) {
+
+            for (User user : users) {
+
+                insertStatement.setString(1, user.getName());
+                insertStatement.setInt(2, user.getAge());
+                insertStatement.setLong(3, user.getRoleId());
+
+                insertStatement.execute();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

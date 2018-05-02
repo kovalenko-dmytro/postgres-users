@@ -32,6 +32,11 @@ public class Application {
             if (CommandType.contains(input)) {
 
                 switch (input) {
+                    case "upload":
+                        String path = helper.getOperation("Enter file path: ");
+                        userController.insertUsers(helper.readUsersFromFile(path));
+                        input = "list";
+                        break;
                     case "list":
                         userController.getUsers();
                         input = helper.getOperation("");
