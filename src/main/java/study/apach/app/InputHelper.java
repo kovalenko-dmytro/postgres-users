@@ -1,5 +1,6 @@
 package study.apach.app;
 
+import study.apach.model.entities.RoleType;
 import study.apach.model.entities.User;
 
 import java.io.BufferedReader;
@@ -43,6 +44,16 @@ public class InputHelper {
 
             System.out.println("Enter a user's role: ");
             input = reader.readLine();
+
+            while (!RoleType.contains(input)) {
+                System.out.println("No such roles for users! Look again:");
+                for (RoleType type : RoleType.values()) {
+                    System.out.println(type.getRoleType());
+                }
+                System.out.println("Enter a user's role: ");
+                input = reader.readLine();
+            }
+
             inputData.put("role", input);
 
         } catch (IOException e) {
